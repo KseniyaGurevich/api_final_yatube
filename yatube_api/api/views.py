@@ -1,6 +1,5 @@
 from rest_framework import viewsets, generics, filters
 from rest_framework.pagination import LimitOffsetPagination
-from django_filters.rest_framework import DjangoFilterBackend
 
 from django.shortcuts import get_object_or_404
 
@@ -61,5 +60,3 @@ class FollowList(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
-
-
