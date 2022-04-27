@@ -55,8 +55,7 @@ class FollowList(generics.ListCreateAPIView):
     search_fields = ('following__username',)
 
     def get_queryset(self):
-        queryset_new = Follow.objects.filter(user=self.request.user)
-        return queryset_new
+        return self.request.user.follower.all()
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
