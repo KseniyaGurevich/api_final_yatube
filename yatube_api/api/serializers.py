@@ -1,16 +1,8 @@
 from rest_framework import serializers
 from rest_framework.validators import UniqueTogetherValidator
+from djoser.serializers import UserSerializer
 
 from posts.models import Comment, Post, Follow, User, Group
-
-
-class UserSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = User
-        fields = ('id', 'username', 'first_name', 'last_name', 'posts')
-        read_only_fields = ('posts',)
-        ref_name = 'ReadOnlyUsers'
 
 
 class CommentSerializer(serializers.ModelSerializer):
