@@ -27,7 +27,7 @@ cd api_final_yatube
 ```
 
 - Cоздать и активировать виртуальное окружение:
-- 
+
 ```
 python3 -m venv env
 ```
@@ -56,7 +56,7 @@ python3 manage.py migrate
 python3 manage.py runserver
 ```
 
-###Примеры запросов к API
+### Примеры запросов к API
 
 - Создание поста и просмотр списка постов:
 ```
